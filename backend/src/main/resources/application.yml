@@ -1,0 +1,28 @@
+server:
+    port: 8082
+    servlet:
+        context-path: /api
+
+spring:
+    datasource:
+        url: jdbc:mysql://localhost:3306/demo?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+        username: root
+        password: Dh15197267549~
+        driver-class-name: com.mysql.cj.jdbc.Driver
+    jpa:
+        hibernate:
+            ddl-auto: update
+        show-sql: true
+        properties:
+            hibernate:
+                format_sql: true
+                dialect: org.hibernate.dialect.MySQLDialect
+
+jwt:
+    secret: your_jwt_secret_key_here_it_should_be_very_long_and_secure_in_production_environment_at_least_256_bits
+    expiration: 86400000 # 24 hours in milliseconds
+
+logging:
+    level:
+        org.springframework.security: DEBUG
+        com.example.demo: DEBUG

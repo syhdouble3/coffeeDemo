@@ -1,0 +1,82 @@
+@import './variables.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: $font-family;
+  color: $text-color;
+  background-color: $background-color;
+}
+
+#root {
+  height: 100%;
+}
+
+// 自定义 antd 主题
+:root {
+  --ant-primary-color: #{$primary-color};
+  --ant-primary-color-hover: #{$secondary-color};
+  --ant-font-family: #{$font-family};
+}
+
+// 布局相关
+.app-layout {
+  min-height: 100vh;
+
+  &__header {
+    background-color: white;
+    padding: 0;
+    height: $header-height;
+    line-height: $header-height;
+    border-bottom: 1px solid $border-color;
+  }
+
+  &__sider {
+    background-color: white;
+    border-right: 1px solid $border-color;
+  }
+
+  &__content {
+    padding: $content-padding;
+    background-color: $background-color;
+  }
+}
+
+// 通用样式
+.full-height {
+  height: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// 动画
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: $transition-base;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: $transition-base;
+}
